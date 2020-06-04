@@ -1,0 +1,386 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <div class=" row">
+            <div class=" col-sm-6 text-left">
+              <h5 class=" card-category">Total Shipments</h5>
+              <h2 class=" card-title">Performance</h2>
+            </div>
+            <div class=" col-sm-6">
+              <div
+                class=" btn-group btn-group-toggle float-right"
+                data-toggle="buttons"
+              >
+                <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[0];updateOptions();clicked=true;clicked1=false;clicked2=false" [ngClass]="{'active':clicked===true}">
+                  <input checked="checked" name="options" type="radio" />
+
+                  <span
+                    class=" d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    Accounts
+                  </span>
+                  <span class=" d-block d-sm-none">
+                    <i class=" tim-icons icon-single-02"> </i>
+                  </span>
+                </label>
+                <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[1];updateOptions();clicked=false;clicked1=true;clicked2=false" [ngClass]="{'active':clicked1===true}">
+                  <input
+                    class=" d-none d-sm-none"
+                    name="options"
+                    type="radio"
+                  />
+
+                  <span
+                    class=" d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    Purchases
+                  </span>
+                  <span class=" d-block d-sm-none">
+                    <i class=" tim-icons icon-gift-2"> </i>
+                  </span>
+                </label>
+                <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[2];updateOptions();clicked=false;clicked1=false;clicked2=true" [ngClass]="{'active':clicked2===true}">
+                  <input class=" d-none" name="options" type="radio" />
+
+                  <span
+                    class=" d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    Sessions
+                  </span>
+                  <span class=" d-block d-sm-none">
+                    <i class=" tim-icons icon-tap-02"> </i>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="chartBig1"> </canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" row">
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Total Shipments</h5>
+          <h3 class=" card-title">
+            <i class=" tim-icons icon-bell-55 text-danger-states"> </i> 763,215
+          </h3>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="chartLineRed"> </canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Daily Sales</h5>
+          <h3 class=" card-title">
+            <i class=" tim-icons icon-delivery-fast text-info"> </i> 3,500€
+          </h3>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="CountryChart"> </canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Completed Tasks</h5>
+          <h3 class=" card-title">
+            <i class=" tim-icons icon-send text-success"> </i> 12,100K
+          </h3>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="chartLineGreen"> </canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" row">
+    <div class=" col-lg-6 col-md-12">
+      <div class=" card card-tasks">
+        <div class=" card-header">
+          <h6 class=" title d-inline">Introduction and Q&A</h6>
+          <p class=" card-category d-inline"></p>
+          <div ngbDropdown>
+            <button
+              class=" btn btn-link btn-icon"
+              data-toggle="dropdown"
+              ngbDropdownToggle
+              type="button"
+            >
+              <i class=" tim-icons icon-settings-gear-63"> </i>
+            </button>
+            <div
+              aria-labelledby="dropdownMenuLink"
+              class=" dropdown-menu-right"
+              ngbDropdownMenu
+            >
+              <a href="javascript:void(0)" ngbDropdownItem> Action </a>
+              <a href="javascript:void(0)" ngbDropdownItem> Another action </a>
+              <a href="javascript:void(0)" ngbDropdownItem> Something else </a>
+            </div>
+          </div>
+        </div>
+        <div class=" card-body">
+          <div class=" table-full-width table-responsive">
+            <table class=" table">
+              <tbody>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">Your data is absolutely safe!</p>
+                    <p class=" text-muted">
+                      Your data is always safe with us. We’ll never give your information to anyone. Using SSL encryption on both Free and Premium account. We can guarantee that.
+In addition, we are using Google Cloud services - the biggest hosting service - which is trusted by thousands of companies and banks.
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          checked=""
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">What is Money Holder? What can I use it for?</p>
+                    <p class=" text-muted">
+                      If you love to actively control what’s happening in your life and have total power over it, Money Lover is one of the best tools that can bring you such power. Money Lover provides you with the two solutions for your personal finance: smarter spending habit and better saving/investment for your future. It’s a powerful tool to track your personal finance: incomes, expenses, debts, and savings.
+                      1. Record and categorize expenses/ incomes
+                      2. Create budgets and keep track saving plans.
+                      3. Keep track your debt/ loan.
+                      4. Bill reminders & schedule for recurring transactions..
+                      5. Travel mode for tourists.
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">Location problem?</p>
+                    <p class=" text-muted">
+                      We have disabled it temporary since our partner (Square) did not provide location service. We're looking for alternative solution now. Sorry for this inconvenience
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">Can I use Premium version across devices?</p>
+                    <p class=" text-muted">
+                      You only have to purchase one time. Premium features work seamlessly across devices and platforms
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body"  >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">How to add an income transaction ?</p>
+                    <p class=" text-muted">
+                      Hi, please choose the "income" tab next to the "expense" tab when you select category for that transaction.
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class=" form-check">
+                      <label class=" form-check-label">
+                        <input
+                          class=" form-check-input"
+                          type="checkbox"
+                          value=""
+                        />
+
+                        <span class=" form-check-sign">
+                          <span class=" check"> </span>
+                        </span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <p class=" title">How to set default wallet?</p>
+                    <p class=" text-muted">
+                      Should you need to set default wallet, please tap ARROW icon (top left of main screen) to see your list of wallet.
+                      You can set TOTAL WALLET mode and SEPARATE WALLET mode at here.
+                    </p>
+                  </td>
+                  <td class=" td-actions text-right">
+                    <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-6 col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Typical accounts table</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Name</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th class=" text-center">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lê Lan</td>
+                  <td>Vietnam</td>
+                  <td>Ho Chi Minh</td>
+                  <td class=" text-center">360,738,000VND</td>
+                </tr>
+                <tr>
+                  <td>Minerva Hooper</td>
+                  <td>Indonesia</td>
+                  <td>Jakarta</td>
+                  <td class=" text-center">$23,789</td>
+                </tr>
+                <tr>
+                  <td>Sage Rodriguez</td>
+                  <td>Netherlands</td>
+                  <td>Baileux</td>
+                  <td class=" text-center">$56,142</td>
+                </tr>
+                <tr>
+                  <td>Philip Chaney</td>
+                  <td>Korea, South</td>
+                  <td>Overland Park</td>
+                  <td class=" text-center">$38,735</td>
+                </tr>
+                <tr>
+                  <td>Doris Greene</td>
+                  <td>Malawi</td>
+                  <td>Feldkirchen in KÃ¤rnten</td>
+                  <td class=" text-center">$63,542</td>
+                </tr>
+                <tr>
+                  <td>Mason Porter</td>
+                  <td>Chile</td>
+                  <td>Gloucester</td>
+                  <td class=" text-center">$78,615</td>
+                </tr>
+                <tr>
+                  <td>Jon Porter</td>
+                  <td>Portugal</td>
+                  <td>Gloucester</td>
+                  <td class=" text-center">$98,615</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
